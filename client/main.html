@@ -1,0 +1,44 @@
+<head>
+  <title>meteor-backend</title>
+</head>
+
+<body>
+  <div class="header-title">
+    <h1>Welcome to my Blogging website</h1>
+    <p>by: Van Alfred 2018</p>
+  </div>
+  <div>
+    {{> createPost}}
+  </div>
+  <div class="posts-container">
+    <h1>New stories for you</h1>
+    {{> posts}}
+  </div>
+</body>
+
+<template name="posts">
+  {{#each posts}}
+    <div class="post-container">
+      {{>post}}
+    </div>
+  {{/each}}
+</template>
+
+<template name="post">
+  <h2>{{title}}</h2>
+  <p>by: {{author}}</p>
+  <p>{{content}}</p>
+  <button id={{id}}>
+    see more
+  </button>
+</template>
+
+<template name="createPost">
+  <div>
+    <input type="text" placeholder="Title">
+    <textarea name="" id="" cols="30" rows="10" placeholder="Content here ...."></textarea>
+    <button>
+      post
+    </button>
+  </div>
+</template>
